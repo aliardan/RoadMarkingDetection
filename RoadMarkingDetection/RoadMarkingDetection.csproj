@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Weights\" />
-    <Folder Include="Assets\input\" />
     <Folder Include="Assets\output\" />
   </ItemGroup>
 
