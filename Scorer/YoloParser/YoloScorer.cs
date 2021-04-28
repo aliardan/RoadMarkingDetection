@@ -114,6 +114,7 @@ namespace Scorer.YoloParser
 
         /// <summary>
         /// Runs inference session.
+        /// Output tensors mapping
         /// </summary>
         private DenseTensor<float>[] Inference(Image image)
         {
@@ -135,9 +136,9 @@ namespace Scorer.YoloParser
 
             DenseTensor<float>[] output = new[]
             {
-                result.First(x => x.Name == "397").Value as DenseTensor<float>,//output1//397//651
-                result.First(x => x.Name == "417").Value as DenseTensor<float>,//output2//417//671
-                result.First(x => x.Name == "437").Value as DenseTensor<float>//output3//437//691
+                result.First(x => x.Name == "397").Value as DenseTensor<float>, //output1//397//651
+                result.First(x => x.Name == "417").Value as DenseTensor<float>, //output2//417//671
+                result.First(x => x.Name == "437").Value as DenseTensor<float>  //output3//437//691
             };
 
             return output;

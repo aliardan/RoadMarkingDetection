@@ -13,6 +13,11 @@ namespace Scorer.DataStructures
         [LoadColumn(1)]
         public string Label;
 
+        /// <summary>
+        /// Read images from folder
+        /// </summary>
+        /// <param name="imageFolder"></param>
+        /// <returns></returns>
         public static IEnumerable<ImageNetData> ReadFromFile(string imageFolder)
         {
             return Directory

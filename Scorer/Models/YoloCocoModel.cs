@@ -5,19 +5,23 @@ using Scorer.YoloParser;
 
 namespace Scorer.Models
 {
+    /// <summary>
+    /// ONNNX Model parameters and labels
+    /// </summary>
     public class YoloCocoModel : YoloModel
     {
         public override int Width { get; } = 640;
         public override int Height { get; } = 640;
         public override int Depth { get; } = 3;
 
+        /// <summary>
+        /// Check onnx model Dimensions!
+        /// </summary>
         public override int Dimensions { get; } = 17;
-
         public override float Confidence { get; } = 0.20f;
         public override float MulConfidence { get; } = 0.25f;
         public override float Overlap { get; } = 0.45f;
-
-        public override string Weights { get; } = "assets/weights/yolov5s.onnx";
+        public override string Weights { get; } = "Assets/weights/yolov5s.onnx";
 
         public YoloCocoModel()
         {
