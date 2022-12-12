@@ -12,3 +12,5 @@ Road markings detection using custom yolov5 model based on ONNX, .NET 5.0
 ⭐[Test-Time Augmentation (TTA)](https://github.com/ultralytics/yolov5/issues/303)
 
 ![result3](https://user-images.githubusercontent.com/33637478/116475913-24696080-a883-11eb-80cb-f2069ece1894.jpg)
+
+https://github.com/aliardan/RoadMarkingDetection/blob/6fe81549bb4d31c9a9a1c1ab2597a11a601bd668/.github/ISSUE_TEMPLATE/bug_report.md
