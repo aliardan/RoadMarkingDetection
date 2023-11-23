@@ -1,5 +1,5 @@
 # Road Marking Detection
-Road markings detection using custom yolov5 model based on ONNX, .NET 5.0
+Road markings detection using custom yolov5 model based on ONNX, .NET 8.0
 
 ⭐[YOLOv5](https://github.com/ultralytics/yolov5)
 
