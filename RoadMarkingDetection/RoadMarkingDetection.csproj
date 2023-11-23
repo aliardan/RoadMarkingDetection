@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>Aliardan.RoadMarkingDetection</PackageId>
     <Title>RoadMarkingDetection</Title>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>Aliardan</Authors>
     <Company>Aliardan</Company>
     <Product>RoadMarkingDetection</Product>
@@ -26,13 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\Users\Aliardan\Downloads\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="2.0.1" />
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.16.3" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
@@ -44,6 +37,11 @@
 
   <ItemGroup>
     <None Update="33637478.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
