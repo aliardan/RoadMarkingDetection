@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>Aliardan.RoadMarkingDetection</PackageId>
     <Title>RoadMarkingDetection</Title>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Aliardan</Authors>
     <Company>Aliardan</Company>
     <Product>RoadMarkingDetection</Product>
@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\Users\Aliardan\Downloads\33637478.jpeg">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="..\..\..\Users\Aliardan\Downloads\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -44,6 +40,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Scorer\Scorer.csproj" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="33637478.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
