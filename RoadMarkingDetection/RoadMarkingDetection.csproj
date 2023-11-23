@@ -5,11 +5,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>Aliardan.RoadMarkingDetection</PackageId>
     <Title>RoadMarkingDetection</Title>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Aliardan</Authors>
     <Company>Aliardan</Company>
     <Product>RoadMarkingDetection</Product>
-    <Description>Road markings detection using custom yolov5 model based on ONNX, .NET 5.0 by Aliardan</Description>
+    <Description>Road markings detection using custom yolov5 model based on ONNX, .NET 8.0 by Aliardan</Description>
     <Copyright>by Aliardan</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <PackageIcon>33637478.jpeg</PackageIcon>
