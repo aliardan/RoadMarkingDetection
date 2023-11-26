@@ -1,20 +1,12 @@
-﻿using System.Drawing;
+﻿using SixLabors.ImageSharp;
 
 namespace Scorer.YoloParser
 {
     /// <summary>
     /// Label of detected object.
     /// </summary>
-    public class YoloLabel
+    public record YoloLabel(int Id, string Name, YoloLabelKind Kind, Color Color)
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public YoloLabelKind Kind { get; set; }
-        public Color Color { get; set; }
-
-        public YoloLabel()
-        {
-            Color = Color.Yellow;
-        }
+        public YoloLabel(int id, string name) : this(id, name, YoloLabelKind.Generic, Color.Yellow) { }
     }
 }
