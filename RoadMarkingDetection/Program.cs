@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using Scorer.Models;
 using Scorer.DataStructures;
 using Scorer.YoloParser;
+using SixLabors.Fonts;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Drawing.Processing;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
 
 namespace RoadMarkingDetection
 {
@@ -20,18 +24,19 @@ namespace RoadMarkingDetection
 
             // Load Data
             IEnumerable<ImageNetData> images = ImageNetData.ReadFromFile(imagesFolder);
-            
+
             Console.WriteLine("=========Identify the objects in the images=========");
             Console.WriteLine("====================================================");
 
             // iterate each image
             for (var i = 1; i <= images.Count(); i++)
             {
-                var scorer = new YoloScorer<YoloCocoModel>(); using var stream = new FileStream($"Assets/input/{i}.jpg", FileMode.Open);
-                var image = Image.FromStream(stream);
+                var scorer = new YoloScorer<YoloRoadModel>("Assets/Weights/yolov5s.onnx");
 
-                List<YoloPrediction> predictions = scorer.Predict(image);
-                using var graphics = Graphics.FromImage(image);
+                using var stream = new FileStream($"Assets/input/{i}.jpg", FileMode.Open);
+                Image<Rgba32> image = Image.Load<Rgba32>(stream);
+
+                var predictions = scorer.Predict(image);
 
                 Console.WriteLine($"=====Identify the objects in the image number {i}=====");
                 Console.WriteLine("");
@@ -40,19 +45,29 @@ namespace RoadMarkingDetection
                 foreach (var prediction in predictions)
                 {
                     double score = Math.Round(prediction.Score, 2);
+                    var font = SystemFonts.CreateFont("Arial", 12, FontStyle.Regular);
 
-                    graphics.DrawRectangles(new Pen(prediction.Label.Color, 2),
-                        new[] { prediction.Rectangle });
+                    var (x, y) = (prediction.Rectangle.Left - 3, prediction.Rectangle.Top - 23);
 
-                    var (x, y) = (prediction.Rectangle.X - 2, prediction.Rectangle.Y - 21);
+                    image.Mutate(x => x.DrawPolygon(Rgba32.ParseHex("#FFFF00"), 1,
+                        new PointF(prediction.Rectangle.Left, prediction.Rectangle.Top),
+                        new PointF(prediction.Rectangle.Right, prediction.Rectangle.Top),
+                        new PointF(prediction.Rectangle.Right, prediction.Rectangle.Bottom),
+                        new PointF(prediction.Rectangle.Left, prediction.Rectangle.Bottom)
+                    ));
 
-                    graphics.DrawString($"{prediction.Label.Name} ({score * 100}%)", new Font("TimesNewRoman", 14),
-                        new SolidBrush(prediction.Label.Color), new PointF(x, y));
+                    image.Mutate(a => a.DrawText($"{prediction.Label.Name} ({score * 100}%)", font, color: prediction.Label.Color, location: new PointF(x, y)));
+
+
                     Console.WriteLine($"{prediction.Label.Name} and its Confidence score: {score * 100}%");
+
                     image.Save($"{outputFolder}/result{i}.jpg");
                 }
+
                 Console.WriteLine("");
+
             }
+
             Console.WriteLine("=============End of Process..Hit any Key============");
         }
 
@@ -63,7 +78,7 @@ namespace RoadMarkingDetection
         /// <returns></returns>
         public static string GetAbsolutePath(string relativePath)
         {
-            FileInfo _dataRoot = new FileInfo(typeof(Program).Assembly.Location);
+            FileInfo _dataRoot = new(typeof(Program).Assembly.Location);
             string assemblyFolderPath = _dataRoot.Directory.FullName;
             string fullPath = Path.Combine(assemblyFolderPath, relativePath);
 
