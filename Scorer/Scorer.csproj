@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <Version>2.0.0</Version>
+    <PackageId>Aliardan.Scorer</PackageId>
+    <Title>Scorer</Title>
+    <Authors>Aliardan</Authors>
+    <Company>Aliardan</Company>
+    <Product>Scorer</Product>
+    <Description>Scorer for RoadMarkingDetection</Description>
+    <Copyright>by Aliardan</Copyright>
+    <PackageIcon>33637478.jpeg</PackageIcon>
+    <RepositoryType>https://github.com/aliardan/RoadMarkingDetection</RepositoryType>
+    <PackageTags>yolo, yolov5, onnx, deep-learning, pytorch, object-detection</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -13,9 +24,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\RoadMarkingDetection\33637478.jpeg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="2.0.1" />
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.16.3" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="SixLabors.Fonts" Version="2.0.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.0.2" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.0.1" />
   </ItemGroup>
 
 </Project>
