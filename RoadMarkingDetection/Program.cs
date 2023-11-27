@@ -17,10 +17,14 @@ namespace RoadMarkingDetection
     {
         static void Main(string[] args)
         {
-            var assetsRelativePath = @"..\\..\\..\\Assets";
+            var assetsRelativePath = @"Assets";
             string assetsPath = GetAbsolutePath(assetsRelativePath);
             var imagesFolder = Path.Combine(assetsPath, "input");
             var outputFolder = Path.Combine(assetsPath, "output");
+
+            FontCollection collection = new();
+            FontFamily family = collection.Add("Assets/font/Arial.ttf");
+            Font font = family.CreateFont(12, FontStyle.Regular);
 
             // Load Data
             IEnumerable<ImageNetData> images = ImageNetData.ReadFromFile(imagesFolder);
@@ -45,7 +49,6 @@ namespace RoadMarkingDetection
                 foreach (var prediction in predictions)
                 {
                     double score = Math.Round(prediction.Score, 2);
-                    var font = SystemFonts.CreateFont("Arial", 12, FontStyle.Regular);
 
                     var (x, y) = (prediction.Rectangle.Left - 3, prediction.Rectangle.Top - 23);
 
