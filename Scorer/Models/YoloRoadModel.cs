@@ -1,6 +1,5 @@
 ﻿using Scorer.Models.Abstract;
 
-
 namespace Scorer.Models
 {
     /// <summary>

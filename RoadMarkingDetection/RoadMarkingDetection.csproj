@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>Aliardan.RoadMarkingDetection</PackageId>
     <Title>RoadMarkingDetection</Title>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
     <Authors>Aliardan</Authors>
     <Company>Aliardan</Company>
     <Product>RoadMarkingDetection</Product>
@@ -42,6 +42,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Assets\font\Arial.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="README.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
