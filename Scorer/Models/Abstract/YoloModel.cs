@@ -7,26 +7,23 @@ namespace Scorer.Models.Abstract
     /// <summary>
     /// Model descriptor.
     /// </summary>
-    public abstract class YoloModel
-    {
-        public abstract int Width { get; }
+    public record YoloModel
+    (
+        int Width,
+        int Height,
+        int Depth,
+        int Dimensions,
 
-        public abstract int Height { get; }
+        float Confidence,
+        float MulConfidence,
+        float Overlap,
 
-        public abstract int Depth { get; }
+        int[] Strides,
+        int[][][] Anchors,
+        int[] Shapes,
 
-        public abstract int Dimensions { get; }
-
-        public abstract float Confidence { get; }
-
-        public abstract float MulConfidence { get; }
-
-        public abstract float Overlap { get; }
-
-        public abstract string Weights { get; }
-
-        public List<YoloLabel> Labels { get; protected set; }
-
-        public bool Ready { get; set; }
-    }
+        string[] Weights,
+        List<YoloLabel> Labels,
+        bool Ready
+    );
 }
