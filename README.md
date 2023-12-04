@@ -4,15 +4,15 @@ Road markings detection using custom yolov5 model based on ONNX, .NET 8.0
 ![result3](https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result3.jpg)
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result1.jpg" width="45%">
-    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result2.jpg" width="45%">
-    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result4.jpg" width="45%">
-    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result5.jpg" width="45%">
+    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result1.jpg" width="48%">
+    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result2.jpg" width="48%">
+    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result4.jpg" width="48%">
+    <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result5.jpg" width="48%">
 </div>
 
 
 # Usage
-## Running ML Dotnet Road marking detection using Yolov5 in Colab <a href="https://colab.research.google.com/drive/1Y8gBSvY0y7yO02dk3VZASdtzgN3iD5zI#scrollTo=FlqYtJfTY23M"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+## Running ML Dotnet Road marking detection using Yolov5 in Colab <a href="https://colab.research.google.com/drive/1w7eW3AP1qOfOwXsXKK9KsRW8xc-WYVrz"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 In this tutorial, we will learn how to detect road markings using Yolov5 and ML Dotnet which is a machine learning framework for .NET.
 
 ## Running with Package Manager Console
