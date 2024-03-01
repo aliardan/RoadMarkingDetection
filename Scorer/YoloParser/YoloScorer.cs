@@ -32,7 +32,7 @@ namespace Scorer.YoloParser
         /// <summary>
         /// Converts xywh bbox format to xyxy.
         /// </summary>
-        private float[] Xywh2xyxy(float[] source)
+        private static float[] Xywh2xyxy(float[] source)
         {
             var result = new float[4];
 
@@ -52,7 +52,7 @@ namespace Scorer.YoloParser
         /// <summary>
         /// Extracts pixels into tensor for net input.
         /// </summary>
-        private Tensor<float> ExtractPixels(Image<Rgba32> image)
+        private static Tensor<float> ExtractPixels(Image<Rgba32> image)
         {
             var tensor = new DenseTensor<float>(new[] { 1, 3, image.Height, image.Width });
 
@@ -87,12 +87,12 @@ namespace Scorer.YoloParser
 
             var result = _inferenceSession.Run(inputs);
 
-            DenseTensor<float>[] output = new[]
-            {
+            DenseTensor<float>[] output =
+            [
                 result.First(x => x.Name == "397").Value as DenseTensor<float>, //output1//397//651
                 result.First(x => x.Name == "417").Value as DenseTensor<float>, //output2//417//671
                 result.First(x => x.Name == "437").Value as DenseTensor<float>  //output3//437//691
-            };
+            ];
 
             return output;
         }
@@ -139,7 +139,7 @@ namespace Scorer.YoloParser
                             var rawW = MathF.Pow(buffer[2] * 2, 2) * _model.Anchors[i][a][0]; // predicted bbox width
                             var rawH = MathF.Pow(buffer[3] * 2, 2) * _model.Anchors[i][a][1]; // predicted bbox height
 
-                            float[] xyxy = Xywh2xyxy(new float[] { rawX, rawY, rawW, rawH });
+                            float[] xyxy = Xywh2xyxy([rawX, rawY, rawW, rawH]);
 
                             var xMin = Clamp((xyxy[0] - xPadding) / xGain, 0, image.Width - 0); // unpad, clip tlx
                             var yMin = Clamp((xyxy[1] - yPadding) / yGain, 0, image.Height - 0); // unpad, clip tly
