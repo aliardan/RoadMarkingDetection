@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="C:\repos\RoadMarkingDetection\Scorer\Scorer.csproj" />
+    <ProjectReference Include="..\Scorer\Scorer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
