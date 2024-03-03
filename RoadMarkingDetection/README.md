@@ -17,11 +17,11 @@ NuGet\Install-Package Aliardan.RoadMarkingDetection -Version 2.0.6
 
 1. .NET 8.0
 2. Aliardan.Scorer (>= 2.0.6)
-3. Microsoft.ML (>= 3.0.1)
-4. Microsoft.ML.OnnxRuntime (>= 1.17.1)
+3. Microsoft.ML (2.0.1)
+4. Microsoft.ML.OnnxRuntime (>= 1.16.3)
 5. SixLabors.Fonts (>= 2.0.2)
-6. SixLabors.ImageSharp (>= 3.1.2)
-7. SixLabors.ImageSharp.Drawing (>= 2.1.1)
+6. SixLabors.ImageSharp (>= 3.0.2)
+7. SixLabors.ImageSharp.Drawing (>= 2.0.1)
 
 # Additional information
 
