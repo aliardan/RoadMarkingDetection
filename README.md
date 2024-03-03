@@ -1,7 +1,11 @@
-# Road Marking Detection
-Road markings detection using custom yolov5 model based on ONNX, .NET 8.0
+# <div align="center">Road Marking Detection</div>
 
-![result3](https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result3.jpg)
+<div align="center">
+Road markings detection using custom yolov5 model based on ONNX, .NET 8.0
+  <p>
+    <a href="https://github.com/aliardan/RoadMarkingDetection" target="_blank">
+      <img width="96.5%" src="https://raw.githubusercontent.com/aliardan/RoadMarkingDetection/main/RoadMarkingDetection/Assets/output/result3.jpg"></a>
+  </p>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
     <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result1.jpg" width="48%">
@@ -9,7 +13,7 @@ Road markings detection using custom yolov5 model based on ONNX, .NET 8.0
     <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result4.jpg" width="48%">
     <img src="https://github.com/aliardan/RoadMarkingDetection/blob/main/RoadMarkingDetection/Assets/output/result5.jpg" width="48%">
 </div>
-
+</div>
 
 # Usage
 ## Running ML Dotnet Road marking detection using Yolov5 in Colab <a href="https://colab.research.google.com/drive/1w7eW3AP1qOfOwXsXKK9KsRW8xc-WYVrz"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
